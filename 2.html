@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Title</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.0.min.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            $("#1").click(function () {
+                $("div").slideDown(1000, function () {
+                    $("#2").show(1000);
+                    $("#3").show(1000);
+                });
+            });
+            $("#2").click(function () {
+                $("div").slideUp(1000, function () {
+                    $("#3").hide(1000);
+                    $("#4").hide(1000);
+                    $("#2").hide(1000);
+                });
+            });
+            $("#3").click(function () {
+                alert("당신은 뒤주에 갇혔습니다.");
+                $("#1").hide(1000);
+                $("#2").hide(1000);
+                $("#3").hide(1000);
+                $("#4").hide(1000);
+                $("div").hide(1000);
+                $("h1").show(1000);
+            });
+            $("#4").click(function () {
+                $("#1").show(1000);
+                $("#2").show(1000);
+                $("#3").show(1000);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button id="1">열기</button>
+    <button id="2" style="display:none">닫기</button>
+    <button id="3" style="display:none">들어가기</button>
+    <button id="4" style="display:none">돌아가기</button>
+    <div style="display:none; width:100px; height:100px; border:5px solid rgb(168, 145, 68);">수상한 상자</div>
+    <h1 style="display: none; color:red;">ㅠㅠ</h1>
+</body>
+
+</html>
